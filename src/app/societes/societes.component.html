@@ -1,0 +1,51 @@
+<div class="main-body">
+  <div class="panel-header">
+      <h2>Liste des Sociétés</h2>
+  </div>
+  <div class="search-container">
+      <mat-form-field class="search-input">
+          <input matInput (keyup)="applyFilter($event)" placeholder="Rechercher...">
+      </mat-form-field>
+      <div class="add-button-container">
+          <button class="add-button" mat-icon-button color="primary" (click)="navigateToAddSociete()" aria-label="Ajouter client">
+              <mat-icon>add</mat-icon>
+          </button>
+      </div>
+  </div>
+  <div class="table-container">
+      <table>
+          <thead>
+              <tr>
+                 
+                  <th>Nom</th>
+                  <th>Adresse</th>
+                  <th>MF</th>
+                  <th>Telephone</th>
+                  <th>Responsable</th>
+                  <th>Email</th>
+
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let societe of filteredSocietes">
+                 
+                  <td>{{ societe.name }}</td>
+                  <td>{{ societe.adresse }}</td>
+                  <td>{{ societe.mf }}</td>
+                  <td>{{ societe.telephone }}</td> 
+                 <td>{{ societe.responsable }}</td> 
+                 <td>{{ societe.email }}</td>
+                  <td>
+                      <button mat-icon-button color="primary" (click)="navigateToEditSociete(societe.id)">
+                          <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-icon-button color="warn" (click)="deleteSociete(societe.id)">
+                          <mat-icon>delete</mat-icon>
+                      </button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

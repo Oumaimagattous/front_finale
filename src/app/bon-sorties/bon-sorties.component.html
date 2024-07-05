@@ -1,0 +1,71 @@
+<div class="main-body">
+    <div class="panel-header">
+      <h2>Liste bonSortie</h2>
+    </div>
+    <div class="search-container">
+     
+      <mat-form-field class="date-input">
+        <input matInput [matDatepicker]="pickerStart" placeholder="Date de début" [(ngModel)]="startDate">
+        <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="date-input">
+        <input matInput [matDatepicker]="pickerEnd" placeholder="Date de fin" [(ngModel)]="endDate">
+        <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+      </mat-form-field>
+
+     
+
+      <button mat-button class="filter-button" (click)="applyDateFilter()">Filtrer</button>
+      <button class="add-button" (click)="addBonSortie()" aria-label="Ajouter client">
+        <mat-icon color="primary">add</mat-icon>
+      </button>
+
+
+     
+
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+           
+            <th>Date</th>
+            <th>Quantité</th>
+            <th>Client</th>
+            <th>Chambre</th>
+            <th>Produit</th>
+            <th>Fournisseur</th>
+            <th>Numéro</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bonSortie of filteredBonsSortie">
+            
+            <td>{{ bonSortie.date | date:'MM/dd/yyyy' }}</td>
+            <td>{{ bonSortie.qte }}</td>
+            <td>{{ bonSortie.client?.name }}</td>
+            <td>{{ bonSortie.chambre?.name }}</td>
+            <td>{{ bonSortie.produit?.name }}</td>
+            <td>{{ bonSortie.fournisseur?.name }}</td>
+           
+            <td>{{ bonSortie.numeroBonSortie }}</td>
+            <td>
+              <button mat-icon-button color="primary" (click)="editBonSortie(bonSortie.id)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deletebonSortie(bonSortie.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button mat-icon-button color="accent" (click)="printBonSortie(bonSortie)">
+                <mat-icon>picture_as_pdf</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

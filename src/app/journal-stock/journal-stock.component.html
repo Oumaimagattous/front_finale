@@ -1,0 +1,70 @@
+<div class="journal-stock-container">
+    <h2>Journal de Stock</h2>
+    <div class="filter-container">
+        <mat-form-field appearance="fill">
+            <mat-label>Filtrer par produit</mat-label>
+            <mat-select [(value)]="selectedProduct">
+                <mat-option *ngFor="let produit of products" [value]="produit">
+                    {{ produit.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Filtrer par fournisseur</mat-label>
+            <mat-select [(value)]="selectedFournisseur">
+                <mat-option *ngFor="let fournisseur of fournisseurs" [value]="fournisseur">
+                    {{ fournisseur.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="date-input">
+            <input matInput [matDatepicker]="pickerStart" placeholder="Date de début" [(ngModel)]="startDate">
+            <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+            <mat-datepicker #pickerStart></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="date-input">
+            <input matInput [matDatepicker]="pickerEnd" placeholder="Date de fin" [(ngModel)]="endDate">
+            <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+            <mat-datepicker #pickerEnd></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-button (click)="applyFilters()">Filtrer</button>
+        <button mat-button (click)="clearFilters()">Effacer</button>
+    </div>
+    <div class="table-container">
+        <table class="mat-elevation-z8">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Date</th>
+                    <th>Observation</th>
+                    <th>Quantité Entrée</th>
+                    <th>Quantité Sortie</th>
+                    <th>Stock Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let entry of filteredJournalStock">
+                    <tr>
+                        <td>{{ entry.produit?.name }}</td>
+                        <td>{{ entry.date | date: 'dd/MM/yyyy' }}</td>
+                        <td>{{ entry.numeroBon }}</td>
+                        <td>{{ entry.qteE === 0 ? '' : entry.qteE }}</td>
+                        <td>{{ entry.qteS === 0 ? '' : entry.qteS }}</td>
+                        <td>{{ entry.stockTotal }}</td>
+                        <td>
+                            <!-- Icône d'impression pour cette entrée -->
+                            <button mat-icon-button (click)="printEntry(entry)">
+                              <mat-icon>print</mat-icon>
+                            </button>
+                          </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

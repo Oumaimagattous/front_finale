@@ -1,0 +1,66 @@
+<div class="main-body">
+    <div class="panel-header">
+      <h2> {{ 'Liste des clients' | translate }}</h2>
+      
+     
+    </div>
+
+    <div class="search-container">
+      <mat-form-field class="search-input">
+        <input matInput (keyup)="applyFilter($event)" placeholder="{{ 'Rechercher' | translate }}...">
+      </mat-form-field>
+      <button  class="add-button" mat-icon-button color="primary" (click)="navigateToAddClient()" aria-label="Ajouter client">
+        <mat-icon>add</mat-icon>
+      </button>
+     
+    </div>
+    
+    
+  
+    <div class="table-container">
+      <!-- Tableau des clients ici -->
+      <table>
+        <thead>
+          <tr>
+           
+          <th>{{ 'Nom' | translate }}</th>
+           <!--<th>{{ 'Type' | translate }}</th>-->
+          <th>{{ 'Matricule fiscal' | translate }}</th>
+          <th>{{ 'CIN' | translate }}</th>
+          <th>{{ 'Date de Délivrance' | translate }}</th>
+          <th>{{ 'Téléphone' | translate }}</th>
+          <th>{{ 'Adresse' | translate }}</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of filteredClients">
+            
+            <td>{{ client.name }}</td>
+            <!-- <td>{{ client.type }}</td>-->
+            <td>{{ client.mf }}</td> 
+            <td>{{ client.cin }}</td>
+            <td>{{ client.dateEmission | date }}</td>
+            <td>{{ client.telephone }}</td> 
+            <td>{{ client.adresse }}</td>
+           
+            
+            
+        
+           
+            <td>
+              
+              <!-- Boutons pour les actions edit et delete -->
+              <button mat-icon-button class="edit-button" (click)="navigateToEditClient(client.id)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button class="delete-button" (click)="deleteClient(client.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
+  

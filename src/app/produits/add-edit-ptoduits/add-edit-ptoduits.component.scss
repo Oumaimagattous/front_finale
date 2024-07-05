@@ -1,0 +1,94 @@
+// Variables de couleurs
+$primary-color: #00bcd4;
+$primary-dark-color: darken($primary-color, 10%);
+$primary-light-color: lighten($primary-color, 20%);
+$background-color: #ffffff;
+$dialog-background-color: #f7f9fc;
+$text-color: #333;
+$border-color: #e0e0e0;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Styles globaux
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+// En-tête du dialogue
+.dialog-title {
+  color: $primary-dark-color;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 8px;
+}
+
+// Contenu du dialogue
+.dialog-content {
+  background-color: $dialog-background-color;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px $shadow-color;
+  max-width: 400px;
+  margin: auto;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 15px;
+  
+  mat-label {
+    color: $primary-dark-color;
+    font-weight: 500;
+  }
+
+  .mat-form-field-outline {
+    border-color: $primary-color;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 8px;
+    background-color: transparent;
+  }
+}
+
+// Actions du dialogue
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 0;
+  border-top: 1px solid $border-color;
+  margin-top: 15px;
+
+  button {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-left: 8px;
+    transition: background-color 0.3s ease;
+
+    &.save-button {
+      color: #fff;
+      background-color: $primary-color;
+
+      &:hover {
+        background-color: $primary-dark-color;
+      }
+    }
+
+    &.cancel-button {
+      color: $primary-color;
+      background-color: transparent;
+      border: 1px solid $primary-color;
+
+      &:hover {
+        background-color: $primary-light-color;
+      }
+    }
+  }
+}

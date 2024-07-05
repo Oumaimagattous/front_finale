@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>{{ societe.id ? 'Modifier Société' : 'Ajouter Société' }}</h1>
+<div mat-dialog-content>
+  <form>
+    <mat-form-field>
+      <mat-label>Nom</mat-label>
+      <input matInput [(ngModel)]="societe.name" name="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Adresse</mat-label>
+      <input matInput [(ngModel)]="societe.adresse" name="adresse">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>MF</mat-label>
+      <input matInput [(ngModel)]="societe.mf" name="mf">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Téléphone</mat-label>
+      <input matInput [(ngModel)]="societe.telephone" name="telephone">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Responsable</mat-label>
+      <input matInput [(ngModel)]="societe.responsable" name="responsable">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="societe.email" name="email">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+
+  <button mat-button color="primary" (click)="onSave()">Sauvegarder</button>
+  <button mat-button (click)="onCancel()">Annuler</button>
+</div>

@@ -1,0 +1,109 @@
+// Variables de couleurs
+$primary-color: #00bcd4;
+$primary-dark-color: darken($primary-color, 10%);
+$primary-light-color: lighten($primary-color, 20%);
+$background-color: #ffffff;
+$dialog-background-color: #f7f9fc;
+$text-color: #333;
+$border-color: #e0e0e0;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Styles globaux
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0; // Supprime la marge par défaut du corps
+  padding: 8px;  // Ajoute un peu de padding
+}
+
+// En-tête du dialogue
+.dialog-title {
+  color: $primary-dark-color;
+  font-size: 16px; // Réduction de la taille de police
+  font-weight: 500;
+  margin-bottom: 4px; // Réduction de la marge
+  text-align: center;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 6px;
+}
+
+// Contenu du dialogue
+.dialog-content {
+  background-color: #ffffff;
+  padding: 20px 20px; /* Réduction du padding pour réduire la taille du formulaire */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  
+  /* Limiter la hauteur maximale et ajouter une barre de défilement si nécessaire */
+  max-height: 300px; /* Ajuster selon votre préférence */
+  overflow-y: auto; /* Ajouter une barre de défilement si nécessaire */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 8px; // Espace entre les lignes
+}
+
+.form-field {
+  flex: 1;
+  margin-right: 8px; // Espace entre les champs
+}
+
+.form-field:last-child {
+  margin-right: 0; // Pas de marge à droite pour le dernier champ
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-datepicker-toggle {
+  margin-top: 4px; // Ajustement pour le sélecteur de date
+}
+
+// Actions du dialogue
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 0;
+  border-top: 1px solid $border-color;
+  margin-top: 8px; // Réduction de la marge
+
+  button {
+    font-size: 10px; // Réduction de la taille de police
+    font-weight: 500;
+    padding: 4px 8px; // Réduction du padding
+    border-radius: 3px;
+    margin-left: 4px;
+    transition: background-color 0.3s ease;
+
+    &.save-button {
+      color: #fff;
+      background-color: $primary-color;
+
+      &:hover {
+        background-color: $primary-dark-color;
+      }
+    }
+
+    &.cancel-button {
+      color: $primary-color;
+      background-color: transparent;
+      border: 1px solid $primary-color;
+
+      &:hover {
+        background-color: $primary-light-color;
+      }
+    }
+  }
+}

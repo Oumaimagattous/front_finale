@@ -1,0 +1,73 @@
+.dialog-title {
+  color: #00bcd4;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+.dialog-content {
+  background-color: #ffffff;
+  padding: 20px 20px; /* Réduction du padding pour réduire la taille du formulaire */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  
+  /* Limiter la hauteur maximale et ajouter une barre de défilement si nécessaire */
+  max-height: 400px; /* Ajuster selon votre préférence */
+  overflow-y: auto; /* Ajouter une barre de défilement si nécessaire */
+}
+.form-field {
+  margin-bottom: 16px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-datepicker-toggle {
+  margin-top: 8px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: space-between; /* Ajouter de l'espace entre les boutons */
+  padding: 16px 0; /* Augmenter légèrement le padding autour des boutons */
+  border-top: 1px solid #e0e0e0;
+  margin-top: 16px;
+}
+
+.save-button {
+  color: #ffffff;
+  background-color: #00bcd4;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-left: 8px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(#00bcd4, 10%);
+  }
+}
+
+.cancel-button {
+  color: #00bcd4;
+  background-color: transparent;
+  border: 1px solid #00bcd4;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten(#00bcd4, 20%);
+  }
+}
