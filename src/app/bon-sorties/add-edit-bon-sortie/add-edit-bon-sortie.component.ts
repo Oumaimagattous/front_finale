@@ -89,20 +89,37 @@ export class AddEditBonSortieComponent implements OnInit {
   }
   
   onFournisseurSelectionChange(): void {
-    console.log('Selected Fournisseur ID:', this.bonSortie.idFournisseur);
-
     if (this.bonSortie.idFournisseur) {
-        this.bonSortieService.getProductsBySupplier(this.bonSortie.idFournisseur).subscribe(
-            produits => {
-                console.log('Products loaded:', produits); 
-                this.produits = produits;
-            },
-            error => {
-                console.error('Erreur lors du chargement des produits par fournisseur:', error);
-            }
-        );
+      this.bonSortieService.getProductsBySupplier(this.bonSortie.idFournisseur).subscribe(
+        produits => {
+          console.log('Produits chargés:', produits);
+          this.produits = produits;
+          this.fetchChambreIfBothSelected(); // Appel de la méthode pour charger la chambre si le produit est déjà sélectionné
+        },
+        error => {
+          console.error('Erreur lors du chargement des produits par fournisseur:', error);
+        }
+      );
     }
-}
+  }
+
+  onProduitSelectionChange(): void {
+    this.fetchChambreIfBothSelected(); // Appel de la méthode pour charger la chambre si le fournisseur est déjà sélectionné
+  }
+
+  fetchChambreIfBothSelected(): void {
+    if (this.bonSortie.idFournisseur && this.bonSortie.idProduit) {
+      this.bonSortieService.getChambreByFournisseurAndProduit(this.bonSortie.idFournisseur, this.bonSortie.idProduit).subscribe(
+        idChambre => {
+          this.bonSortie.idChambre = idChambre;
+        },
+        error => {
+          console.error('Erreur lors du chargement de la chambre:', error);
+        }
+      );
+    }
+  }
+
 
 
 

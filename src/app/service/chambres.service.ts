@@ -31,5 +31,29 @@ export class ChambresService {
   getChambre(id: number): Observable<any> {
     return this._http.get(`${this.baseUrl}/${id}`);
   }
+  getChambresDetails(societeId: number): Observable<any[]> {
+    return this._http.get<any[]>(`${this.baseUrl}/DetailsBySociete/${societeId}`);
+  }
+ 
+  getByFournisseurAndChambre(fournisseurId: number, chambreId: number, produitId: number): Observable<any> {
+    return this._http.get(`${this.baseUrl}/FilterByFournisseurAndChambre/${fournisseurId}/${chambreId}/${produitId}`);
+  }
+
+  getChambresDetailsByChambre(chambreId: number): Observable<any> {
+    const url = `${this.baseUrl}/DetailsBySocieteBychambre?chambreId=${chambreId}`;
+    return this._http.get<any>(url)
+      
+  }
+  getEtatChambres(societeId: number, idChambre?: number): Observable<any> {
+    let url = `${this.baseUrl}/EtatChambre/${societeId}`;
+    if (idChambre) {
+      url += `?idChambre=${idChambre}`;
+    }
+    return this._http.get<any>(url);
+  }
+
+
+
+
 
 }

@@ -12,6 +12,7 @@ import { ProduitsService } from 'app/service/produits.service';
 import { ChambresService } from 'app/service/chambres.service';
 import { FournissursService } from 'app/service/fournissurs.service';
 import { SocietesService } from 'app/service/societes.service';
+import { TranslateService } from '@ngx-translate/core'; 
 @Component({
   selector: 'app-bon-sorties',
   templateUrl: './bon-sorties.component.html',
@@ -33,6 +34,7 @@ export class BonSortiesComponent implements OnInit {
     private produitService: ProduitsService,
     private chambreService: ChambresService,
     private societeService: SocietesService,
+    private translate: TranslateService,
     private fournisseurService: FournissursService
   ) { }
 

@@ -47,6 +47,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatMenuModule } from '@angular/material/menu';
+import { JournalChambreComponent } from '../../journal-chambre/journal-chambre.component';
+import { EtaChambreComponent } from '../../eta-chambre/eta-chambre.component';
 
 
 // Factory function for the translation loader
@@ -107,6 +109,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     EtaCasierComponent,
     AddJournalCasierComponent,
     LoginComponent,
+    JournalChambreComponent,
+    EtaChambreComponent,
     
 
    

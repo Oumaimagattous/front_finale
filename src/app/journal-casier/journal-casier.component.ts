@@ -9,6 +9,7 @@ import { ProduitsService } from 'app/service/produits.service';
 import { AddJournalCasierComponent } from './add-journal-casier/add-journal-casier.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-journal-casier',
@@ -35,6 +36,7 @@ export class JournalCasierComponent implements OnInit {
     private fournisseursService: FournissursService,
     private authService: AuthServiceService,
     private snackBar: MatSnackBar,
+    private translate: TranslateService,
     public dialog: MatDialog
   ) {}
 

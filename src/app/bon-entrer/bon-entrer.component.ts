@@ -13,6 +13,7 @@ import { FournissursService } from 'app/service/fournissurs.service';
 import { ClientsService } from 'app/service/clients.service';
 import { ProduitsService } from 'app/service/produits.service';
 import { ChambresService } from 'app/service/chambres.service';
+import { TranslateService } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-bon-entrer',
@@ -37,6 +38,7 @@ export class BonEntrerComponent implements OnInit {
     private produitService: ProduitsService,
     private snackBar: MatSnackBar,
     private router: Router,
+    private translate: TranslateService,
 
     private dialog: MatDialog
   ) {}

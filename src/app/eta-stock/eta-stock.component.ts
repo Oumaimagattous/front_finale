@@ -5,6 +5,7 @@ import { AuthServiceService } from 'app/service/auth-service.service';
 import { FournissursService } from 'app/service/fournissurs.service';
 import { JournalStockService } from 'app/service/journal-stock.service';
 import { ProduitsService } from 'app/service/produits.service';
+import { TranslateService } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-eta-stock',
@@ -22,7 +23,7 @@ export class EtaStockComponent implements OnInit {
   selectedFournisseur: Fournisseur | null = null;
   societeId: number;
 
-  constructor(private etatStockService: JournalStockService,   private authService: AuthServiceService,   private produitsService: ProduitsService, private fournisseursService: FournissursService) { }
+  constructor(private etatStockService: JournalStockService,   private authService: AuthServiceService,   private produitsService: ProduitsService, private fournisseursService: FournissursService,private translate: TranslateService) { }
 
   ngOnInit(): void {
     this.societeId = this.authService.getIdSociete();

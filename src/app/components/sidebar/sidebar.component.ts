@@ -37,7 +37,11 @@ export const ROUTES: RouteInfo[] = [
       children: [
         { path: 'journal-stock', title: 'Journal du Stock', icon: 'assessment', class: '' },  
         { path: 'eta-stock', title: 'Etat du Stock', icon: 'inventory_2', class: '' },  
-        { path: 'journal-casier', title: 'Journal du Casier', icon: 'folder', class: '' }  
+        { path: 'journal-casier', title: 'Journal du Casier', icon: 'folder', class: '' },
+        { path: 'journal-chambre', title: 'Journal du Chambres', icon: 'folder', class: '' },
+        { path: 'eta-chambre', title: 'Etat du Chambres', icon: 'inventory_2', class: '' }
+
+
       ]
     }
     

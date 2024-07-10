@@ -23,7 +23,7 @@ export class AddEditChambresComponent  {
     private authService: AuthServiceService
 
   ) {
-    this.chambre = data.chambre ? { ...data.chambre } : { id: null, name: '', idSociete: null };
+    this.chambre = data.chambre ? { ...data.chambre } : { id: null, name: '', idSociete: null , idProduit: 0, idFournisseur: 0 };
   }
 
   ngOnInit(): void {

@@ -23,14 +23,17 @@
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Nombre de casiers</mat-label>
+    <input matInput name="nombreCasier" [(ngModel)]="bonEntree.nombreCasier" required>
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline" class="form-field">
     <mat-label>Quantité</mat-label>
     <input matInput name="qte" [(ngModel)]="bonEntree.qte" required>
   </mat-form-field>
 
-  <mat-form-field appearance="outline" class="form-field">
-    <mat-label>Nombre de casiers</mat-label>
-    <input matInput name="nombreCasier" [(ngModel)]="bonEntree.nombreCasier" required>
-  </mat-form-field>
+ 
 
   <mat-form-field appearance="outline" class="form-field">
     <mat-label>Date</mat-label>

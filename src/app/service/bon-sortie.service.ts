@@ -40,5 +40,10 @@ export class BonSortieService {
   return this.http.get<any>(url);
 }
 
+getChambreByFournisseurAndProduit(idFournisseur: number, idProduit: number): Observable<number> {
+  return this.http.get<number>(`${this.apiUrl}/GetChambreByFournisseurAndProduit/${idFournisseur}/${idProduit}`);
+}
+
+
 
 }

@@ -38,6 +38,8 @@ import { JournalCasierService } from './service/journal-casier.service';
 
 
 
+
+
 //import { MatIconModule } from '@angular/material/icon';
 
 
@@ -77,6 +79,8 @@ import { JournalCasierService } from './service/journal-casier.service';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+   
+  
     
  
    

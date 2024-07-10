@@ -1,0 +1,99 @@
+/* Style pour le conteneur des éléments de sélection et du bouton de filtrage */
+.filter-container {
+  display: flex; /* Utilisation d'un layout flexbox pour aligner les éléments horizontalement */
+  align-items: center; /* Alignement vertical au centre */
+  justify-content: space-between; /* Espacement uniforme entre les éléments */
+  margin-bottom: 20px; /* Espacement en bas du conteneur */
+  padding: 10px; /* Espacement interne */
+  background-color: #fff; /* Couleur de fond */
+  border: 1px solid #ccc; /* Bordure grise */
+  border-radius: 4px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.filter-container label {
+  margin-right: 10px; /* Espacement à droite des labels */
+}
+
+.filter-container select {
+  padding: 8px; /* Espacement intérieur des selects */
+  margin-right: 10px; /* Espacement à droite des selects */
+  border-radius: 4px; /* Coins arrondis pour les selects */
+  border: 1px solid #ccc; /* Bordure grise */
+}
+
+.filter-container button {
+  padding: 8px 16px; /* Espacement intérieur du bouton */
+  background-color: #00bcd4; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte */
+  border: none; /* Pas de bordure */
+  border-radius: 4px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointeur au survol */
+}
+
+.filter-container button:hover {
+  background-color: #0097a7; /* Couleur de fond du bouton au survol */
+}
+
+/* Style pour le conteneur principal */
+.journal-casier-container {
+  background-color: #f5f5f5; /* Couleur de fond douce */
+  padding: 20px; /* Espacement autour du contenu */
+  font-family: 'Roboto', sans-serif; /* Police moderne et propre */
+
+  /* Style pour le titre de chaque chambre */
+  h3 {
+    color: #00bcd4; /* Couleur principale */
+    margin-bottom: 10px; /* Espacement sous le titre */
+    text-align: center; /* Alignement du texte au centre */
+  }
+
+  /* Style pour chaque table de détails */
+  table {
+    width: 100%;
+    margin-top: 15px; /* Espacement en haut de la table */
+    border-collapse: collapse; /* Supprime les espaces entre les cellules */
+    background-color: #fff; /* Couleur de fond de la table */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+
+  /* Style pour l'en-tête de la table */
+  th {
+    background-color: #00bcd4; /* Couleur de fond des en-têtes */
+    color: #fff; /* Couleur du texte des en-têtes */
+    padding: 12px 15px; /* Espacement dans les cellules */
+    text-align: left; /* Alignement du texte à gauche */
+  }
+
+  /* Style pour les lignes paires de la table */
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Couleur de fond des lignes paires */
+  }
+
+  /* Style pour les cellules (dates, quantités, etc.) */
+  td {
+    padding: 12px 15px; /* Espacement dans les cellules */
+    text-align: left; /* Alignement du texte à gauche */
+  }
+
+  /* Style pour les lignes de titre des bons d'entrée et de sortie */
+  tr.title-row {
+    background-color: #ccc; /* Couleur de fond pour les lignes de titre */
+  }
+
+  /* Style pour la ligne de titre */
+  tr.title-row td {
+    font-weight: bold; /* Texte en gras pour le titre */
+    padding: 12px 15px; /* Espacement dans les cellules */
+    text-align: center; /* Alignement du texte au centre */
+  }
+
+  /* Style pour la ligne de séparation entre chaque section */
+  hr {
+    border: none; /* Pas de bordure */
+    height: 1px; /* Hauteur de la ligne */
+    background-color: #ddd; /* Couleur de la ligne de séparation */
+    margin: 20px 0; /* Espacement avant et après la ligne */
+  }
+}

@@ -21,6 +21,8 @@ import { JournalStockComponent } from '../../journal-stock/journal-stock.compone
 import { EtaStockComponent } from '../../eta-stock/eta-stock.component';
 import { JournalCasierComponent } from '../../journal-casier/journal-casier.component';
 import { EtaCasierComponent } from '../../eta-casier/eta-casier.component';
+import { JournalChambreComponent } from '../../journal-chambre/journal-chambre.component';
+import { EtaChambreComponent } from '../../eta-chambre/eta-chambre.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -85,7 +87,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'stock/journal-stock', component: JournalStockComponent, canActivate: [AuthGuard] },
     { path: 'stock/eta-stock', component: EtaStockComponent, canActivate: [AuthGuard] },
     { path: 'stock/journal-casier', component: JournalCasierComponent, canActivate: [AuthGuard] },
+    { path: 'stock/journal-chambre', component: JournalChambreComponent, canActivate: [AuthGuard] },
     { path: 'eta-casier', component: EtaCasierComponent, canActivate: [AuthGuard] },
+    { path: 'stock/eta-chambre', component: EtaChambreComponent, canActivate: [AuthGuard] },
     
     { path: 'login', component: LoginComponent }
 

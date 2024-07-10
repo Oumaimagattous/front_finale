@@ -1,0 +1,36 @@
+<div class="filter-container">
+    <label for="chambreSelect">Sélectionner Chambre:</label>
+    <select id="chambreSelect" [(ngModel)]="selectedChambreId">
+      <option *ngFor="let chambre of chambres" [value]="chambre.id">{{ chambre.name }}</option>
+    </select>
+  
+  
+    <button (click)="filter()">Filtrer</button>
+    <button (click)="clearFilters()">Effacer</button>
+  </div>
+
+
+<div *ngFor="let chambre of chambres" class="journal-chambre-container">
+    <h2>{{ chambre.chambre }}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fournisseur</th>
+          <th>Produit</th>
+          <th>Total Entrées</th>
+          <th>Total Sorties</th>
+          <th>Stock Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of chambre.fournisseursProduits">
+          <td>{{ item.fournisseur }}</td>
+          <td>{{ item.produit }}</td>
+          <td>{{ item.totalEntrees }}</td>
+          <td>{{ item.totalSorties }}</td>
+          <td>{{ item.stockTotal }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

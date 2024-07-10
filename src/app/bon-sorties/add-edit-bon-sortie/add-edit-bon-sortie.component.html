@@ -13,12 +13,19 @@
 
   <mat-form-field appearance="outline" class="form-field">
     <mat-label>Produit</mat-label>
-    <mat-select name="idProduit" [(ngModel)]="bonSortie.idProduit" required>
+    <mat-select name="idProduit" [(ngModel)]="bonSortie.idProduit" (selectionChange)="onProduitSelectionChange()" required>
       <mat-option *ngFor="let produit of produits" [value]="produit?.id">{{ produit?.name }}</mat-option>
-  </mat-select>
-  
-  
+    </mat-select>
   </mat-form-field>
+  
+  
+  
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Nombre de Casiers</mat-label>
+    <input matInput name="nbrScasier" [(ngModel)]="bonSortie.nbrScasier" required>
+ </mat-form-field>
+
 
   <mat-form-field appearance="outline" class="form-field">
     <mat-label>Quantité</mat-label>
@@ -62,10 +69,6 @@
     <input matInput name="cinChauffeur" [(ngModel)]="bonSortie.cinChauffeur">
   </mat-form-field>
 
-  <mat-form-field appearance="outline" class="form-field">
-    <mat-label>Nombre de Casiers</mat-label>
-    <input matInput name="nbrScasier" [(ngModel)]="bonSortie.nbrScasier" required>
- </mat-form-field>
 
   <mat-form-field appearance="outline" class="form-field">
     <mat-label>Numéro BonSortie</mat-label>
