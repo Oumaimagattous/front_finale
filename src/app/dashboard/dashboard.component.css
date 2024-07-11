@@ -3,3 +3,15 @@
     top: 60px; /* Adjust the top position to move the icons downwards */
     right: 10px;
 }
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  html[dir="ltr"] body {
+    direction: ltr;
+    text-align: left;
+  }
+  
+  /* Ajoutez d'autres styles spécifiques si nécessaire */
+  

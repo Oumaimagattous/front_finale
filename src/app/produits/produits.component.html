@@ -1,11 +1,11 @@
 <div class="main-body">
     <div class="panel-header">
-      <h2>Liste des Produits</h2>
+      <h2>{{ 'Liste des Produits' | translate }}</h2>
       
     </div>
     <div class="search-container">
       <mat-form-field class="search-input">
-        <input matInput (keyup)="applyFilter($event)" placeholder="Rechercher...">
+        <input matInput (keyup)="applyFilter($event)" placeholder="{{ 'Rechercher' | translate }}">
       </mat-form-field>
       <button  class="add-button" mat-icon-button color="primary" (click)="navigateToAddProduit()" aria-label="Ajouter client">
         <mat-icon>add</mat-icon>
@@ -18,7 +18,7 @@
         <thead>
           <tr>
            
-            <th>Nom</th>
+            <th>{{ 'Nom' | translate }}</th>
             
             <th></th>
           </tr>

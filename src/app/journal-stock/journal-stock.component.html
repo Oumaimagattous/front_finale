@@ -1,8 +1,8 @@
 <div class="journal-stock-container">
-    <h2>Journal de Stock</h2>
+    <h2>{{ 'Journal de Stock' | translate }}</h2>
     <div class="filter-container">
         <mat-form-field appearance="fill">
-            <mat-label>Filtrer par produit</mat-label>
+            <mat-label> {{ 'Filtrer par produit' | translate }}</mat-label>
             <mat-select [(value)]="selectedProduct">
                 <mat-option *ngFor="let produit of products" [value]="produit">
                     {{ produit.name }}
@@ -11,7 +11,7 @@
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-            <mat-label>Filtrer par fournisseur</mat-label>
+            <mat-label>{{ 'Filtrer par fournisseur' | translate }}</mat-label>
             <mat-select [(value)]="selectedFournisseur">
                 <mat-option *ngFor="let fournisseur of fournisseurs" [value]="fournisseur">
                     {{ fournisseur.name }}
@@ -20,30 +20,30 @@
         </mat-form-field>
 
         <mat-form-field class="date-input">
-            <input matInput [matDatepicker]="pickerStart" placeholder="Date de début" [(ngModel)]="startDate">
+            <input matInput [matDatepicker]="pickerStart" placeholder="{{ 'Date de début' | translate }}" [(ngModel)]="startDate">
             <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
             <mat-datepicker #pickerStart></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field class="date-input">
-            <input matInput [matDatepicker]="pickerEnd" placeholder="Date de fin" [(ngModel)]="endDate">
+            <input matInput [matDatepicker]="pickerEnd" placeholder="{{ 'Date de fin' | translate }}" [(ngModel)]="endDate">
             <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
             <mat-datepicker #pickerEnd></mat-datepicker>
         </mat-form-field>
 
-        <button mat-button (click)="applyFilters()">Filtrer</button>
-        <button mat-button (click)="clearFilters()">Effacer</button>
+        <button mat-button (click)="applyFilters()">{{ 'Filtrer' | translate }}</button>
+        <button mat-button (click)="clearFilters()">{{ 'Effacer' | translate }}</button>
     </div>
     <div class="table-container">
         <table class="mat-elevation-z8">
             <thead>
                 <tr>
-                    <th>Produit</th>
-                    <th>Date</th>
-                    <th>Observation</th>
-                    <th>Quantité Entrée</th>
-                    <th>Quantité Sortie</th>
-                    <th>Stock Total</th>
+                    <th>{{ 'Produit' | translate }}</th>
+                    <th>{{ 'Date' | translate }}</th>
+                    <th>{{ 'Observation' | translate }}</th>
+                    <th>{{ 'Quantité Entrée' | translate }}</th>
+                    <th>{{ 'Quantité Sortie' | translate }}</th>
+                    <th>{{ 'Stock Total' | translate }}</th>
                     <th></th>
                 </tr>
             </thead>

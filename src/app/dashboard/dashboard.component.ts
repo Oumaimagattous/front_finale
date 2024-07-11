@@ -9,7 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class DashboardComponent implements OnInit {
   
-
+  currentLang: string = 'fr';
+  
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('fr');
 }
@@ -17,6 +18,18 @@ export class DashboardComponent implements OnInit {
 
   switchLanguage(language: string) {
     this.translate.use(language);
+    this.currentLang = language;
+    this.applyDirectionality();
+  }
+  applyDirectionality() {
+    const htmlElement = document.documentElement;
+    if (this.currentLang === 'ar') {
+      htmlElement.setAttribute('dir', 'rtl');
+      htmlElement.setAttribute('lang', 'ar');
+    } else {
+      htmlElement.setAttribute('dir', 'ltr');
+      htmlElement.setAttribute('lang', this.currentLang);
+    }
   }
   
   startAnimationForLineChart(chart){

@@ -1,27 +1,27 @@
 <div class="filter-container">
-  <label for="chambreSelect">Sélectionner Chambre:</label>
+  <label for="chambreSelect">{{ 'Sélectionner Chambre:' | translate }}</label>
   <select id="chambreSelect" [(ngModel)]="selectedChambreId">
     <option *ngFor="let chambre of chambres" [value]="chambre.id">{{ chambre.name }}</option>
   </select>
 
 
-  <button (click)="filter()">Filtrer</button>
-  <button (click)="clearFilters()">Effacer</button>
+  <button (click)="filter()">{{ 'Filtrer' | translate }}</button>
+  <button (click)="clearFilters()">{{ 'Effacer' | translate }}</button>
 </div>
 
 <div *ngFor="let chambre of chambresDetails" class="journal-casier-container">
-  <h2>Chambre: {{ chambre.chambre }}</h2>
+  <h2>{{ 'Chambre:' | translate }} {{ chambre.chambre }}</h2>
   <div *ngFor="let fournisseurProduit of chambre.fournisseursProduits">
-    <h3>Fournisseur: {{ fournisseurProduit.fournisseur }}</h3>
-    <h4>Produit: {{ fournisseurProduit.produit }}</h4>
-    <h4>Stock Total: {{ fournisseurProduit.stockTotal }}</h4>
+    <h3> {{ 'Fournisseur:' | translate }} {{ fournisseurProduit.fournisseur }}</h3>
+    <h4> {{ 'Produit:' | translate }}{{ fournisseurProduit.produit }}</h4>
+    <h4> {{ 'Stock Total:' | translate }}{{ fournisseurProduit.stockTotal }}</h4>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
-          <th>Date</th>
-          <th>Quantité</th>
-          <th>Nombre Casier</th>
+          <th>{{ 'Type' | translate }}</th>
+          <th>{{ 'Date' | translate }}</th>
+          <th>{{ 'Quantité' | translate }}</th>
+          <th>{{ 'Nombre Casier' | translate }}</th>
         </tr>
       </thead>
       <tbody>

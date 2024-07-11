@@ -1,20 +1,20 @@
 <div class="main-body">
   <div class="panel-header">
-    <h2>Liste BonEntrée</h2>
+    <h2> {{ 'Liste BonEntrée' | translate }}</h2>
   </div>
   <div class="search-container">
    
     <mat-form-field class="date-input">
-      <input matInput [matDatepicker]="pickerStart" placeholder="Date de début" [(ngModel)]="startDate">
+      <input matInput [matDatepicker]="pickerStart" placeholder="{{ 'Date de début' | translate }}" [(ngModel)]="startDate">
       <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
       <mat-datepicker #pickerStart></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="date-input">
-      <input matInput [matDatepicker]="pickerEnd" placeholder="Date de fin" [(ngModel)]="endDate">
+      <input matInput [matDatepicker]="pickerEnd" placeholder="{{ 'Date de fin' | translate }}" [(ngModel)]="endDate">
       <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
       <mat-datepicker #pickerEnd></mat-datepicker>
     </mat-form-field>
-    <button mat-button class="filter-button" (click)="applyDateFilter()">Filtrer</button>
+    <button mat-button class="filter-button" (click)="applyDateFilter()"> {{ 'Filtrer' | translate }}</button>
     <button class="add-button" (click)="addBonEntree()" aria-label="Ajouter client">
       <mat-icon color="primary">add</mat-icon>
     </button>
@@ -24,13 +24,13 @@
       <thead>
         <tr>
           
-          <th>Date</th>
-          <th>Quantité</th>
-          <th>Fournisseur</th>
-          <th>Chambre</th>
-          <th>Produit</th>
-          <th>Nombre-Casier</th>
-          <th>Numéro</th>
+          <th>{{ 'Date' | translate }}</th>
+          <th>{{ 'Quantité' | translate }}</th>
+          <th>{{ 'Fournisseur' | translate }}</th>
+          <th>{{ 'Chambre' | translate }}</th>
+          <th>{{ 'Produit' | translate }}</th>
+          <th>{{ 'Nombre-Casier' | translate }}</th>
+          <th>{{ 'Numéro' | translate }}</th>
           <th></th>
         </tr>
       </thead>

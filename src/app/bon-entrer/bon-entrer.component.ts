@@ -45,6 +45,7 @@ export class BonEntrerComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadBonsEntree();
+    this.setTranslations();
   }
 
   
@@ -136,6 +137,12 @@ export class BonEntrerComponent implements OnInit {
         this.filteredBonsEntree = this.filteredBonsEntree.filter(bonEntree => bonEntree.id !== id);
       });
     }
+  }
+
+  private setTranslations(): void {
+    this.translate.get('liste_des entrées').subscribe((translation: string) => {
+      document.title = translation; // Modifier le titre de la page par exemple
+    });
   }
   
   

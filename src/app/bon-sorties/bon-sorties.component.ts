@@ -40,6 +40,7 @@ export class BonSortiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadSorties();
+    this.setTranslations();
   }
 
   loadSorties() {
@@ -115,6 +116,11 @@ export class BonSortiesComponent implements OnInit {
           this.snackBar.open('Bon de sortie modifié avec succès', 'Fermer', { duration: 2000 });
         });
       }
+    });
+  }
+  private setTranslations(): void {
+    this.translate.get('liste_des sorties').subscribe((translation: string) => {
+      document.title = translation; // Modifier le titre de la page par exemple
     });
   }
 

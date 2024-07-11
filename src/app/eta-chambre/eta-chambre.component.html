@@ -1,12 +1,12 @@
 <div class="filter-container">
-    <label for="chambreSelect">Sélectionner Chambre:</label>
+    <label for="chambreSelect">{{ 'Sélectionner Chambre:' | translate }}</label>
     <select id="chambreSelect" [(ngModel)]="selectedChambreId">
       <option *ngFor="let chambre of chambres" [value]="chambre.id">{{ chambre.name }}</option>
     </select>
   
   
-    <button (click)="filter()">Filtrer</button>
-    <button (click)="clearFilters()">Effacer</button>
+    <button (click)="filter()">{{ 'Filtrer' | translate }}</button>
+    <button (click)="clearFilters()">{{ 'Effacer' | translate }}</button>
   </div>
 
 
@@ -15,11 +15,11 @@
     <table>
       <thead>
         <tr>
-          <th>Fournisseur</th>
-          <th>Produit</th>
-          <th>Total Entrées</th>
-          <th>Total Sorties</th>
-          <th>Stock Total</th>
+          <th>{{ 'Fournisseur' | translate }}</th>
+          <th>{{ 'Produit' | translate }}</th>
+          <th>{{ 'Total Entrées' | translate }}</th>
+          <th>{{ 'Total Sorties' | translate }}</th>
+          <th>{{ 'Stock Total' | translate }}</th>
         </tr>
       </thead>
       <tbody>

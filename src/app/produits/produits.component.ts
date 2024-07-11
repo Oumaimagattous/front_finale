@@ -7,6 +7,7 @@ import { Produit } from 'app/Models/produit';
 import { AddEditPtoduitsComponent } from './add-edit-ptoduits/add-edit-ptoduits.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthServiceService } from 'app/service/auth-service.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-produits',
@@ -23,11 +24,13 @@ export class ProduitsComponent implements OnInit {
     private produitsService: ProduitsService,
     private authService: AuthServiceService,
     private router: Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private translate: TranslateService
   ) {}
 
   ngOnInit(): void {
     this.loadProduits();
+    this.setTranslations();
   }
 
   loadProduits(): void {
@@ -102,6 +105,11 @@ export class ProduitsComponent implements OnInit {
       if (result) {
         this.loadProduits();
       }
+    });
+  }
+  private setTranslations(): void {
+    this.translate.get('Liste des Produits').subscribe((translation: string) => {
+      document.title = translation;
     });
   }
 

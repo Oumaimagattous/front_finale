@@ -35,3 +35,14 @@
 .nav-item button p {
     margin: 0;
 }
+.rtl .sidebar-wrapper {
+    float: right;
+}
+
+.rtl .navbar-nav {
+    text-align: right;
+}
+
+.rtl .nav-item {
+    text-align: right;
+}
